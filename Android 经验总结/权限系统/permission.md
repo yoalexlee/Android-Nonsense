@@ -29,6 +29,9 @@
 	- IllegalArgumentException 这个在某些手机设置里没有某个权限开关的时候会抛出，这种情况我们认为权限是被允许的（因为没有开关让用户改啊）
 	- SecurityException 这个就是我们想要的，在 `checkOp` 函数中发现权限没有被允许就会抛出
 
+### 坑
+- 原生 Android 6.0系统（如 Nexus 5x）默认禁用悬浮窗权限，但没有地方打开，这种情况就算例外吧，直接 continue 循环
+
 ### 技术点
 - jOOR 一行代码反射
 ```
