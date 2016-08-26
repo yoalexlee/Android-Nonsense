@@ -6,8 +6,8 @@
 
 这个项目会记录一个 Android 开发者的方方面面，内容比较杂，大致会分以下几个目录。
 
-## Android 经验总结
-这个会开好几个目录，还没想好有多少。
+## practices
+Android 经验总结。
 
-## Android 招聘
+## career
 招聘信息。
