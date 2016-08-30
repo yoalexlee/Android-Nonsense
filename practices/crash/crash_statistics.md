@@ -36,9 +36,9 @@ remove
 - lock 关闭后可加锁防止 reopen 比如一些无法修复且概率非常小的系统 crash
 
 ### 自定义字段
-这些字段会显示在 crash 的详细信息中（面板右上方）
+这些字段会显示在 crash 的详细信息中
 
-- setUserIdentifier
+- setUserIdentifier 显示在面板右上方
 	- setUserName
 	- setUserEmail
 - setInt setBool 等等
