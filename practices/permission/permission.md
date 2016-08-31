@@ -61,3 +61,7 @@
 		- MODE_DEFAULT 默认（可以认为是允许）
 		- MODE_IGNORED 静默拒绝
 		- MODE_ERRORED 拒绝
+
+### 坑
+- PermissionChecker 这个类虽然是 support 包的兼容类，但是在某些手机上使用会抛出异常，还是加上 catch 比较保险。
+	- Lenovo 的部分低端机
