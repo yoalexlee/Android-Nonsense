@@ -45,10 +45,8 @@
 
 - 每个对象都有 x、y、z 三维坐标属性
 - z 轴垂直于显示平面，并延伸向用户视角
-![](http://wiki.jikexueyuan.com/project/material-design/images/1.png)
 - Material thickness **1dp**
 - Shadows are created by the elevation difference between overlapping material
-![](https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VVFpiZ041SmhwY2c/what_is_material_environment.png)
 
 #### 光影关系
 
@@ -57,18 +55,14 @@
 	- 环境光从各个角度投射出连贯又柔和的阴影
 - 示例
 	- 主光源
-![](http://wiki.jikexueyuan.com/project/material-design/images/1_1.png)
 	- 环境光
-![](http://wiki.jikexueyuan.com/project/material-design/images/1_2.png)
 	- 混合
-![](http://wiki.jikexueyuan.com/project/material-design/images/1_3.png)
 
 ### [Material 属性](https://material.google.com/material-design/material-properties.html#)
 
 #### 物理属性
 
 - 材料具有**可变的长宽尺寸**（以 dp 为计）和**均匀的厚度（1dp）**
-![](http://wiki.jikexueyuan.com/project/material-design/images/2.png)
 - *材料会形成阴影*
 	- 阴影是由于材料元件之间的相对高度（Z 轴位置）而自然产生的
 	- 阴影描述材料元件之间的相对高度
@@ -77,10 +71,6 @@
 	- 内容的展示能够独立于材料，但要被限制在材料的范围里
 	- 输入事件不能穿过材料
 - 多个材料元件不能同时占用相同的空间点（必须有高度的区别）
-	- Do
-![](https://material-design.storage.googleapis.com/publish/material_v_9/0Bx4BSt6jniD7aVhXV0EtZ29OSU0/whatismaterial_properties_physical5.png)
-	- Don't
-![](https://material-design.storage.googleapis.com/publish/material_v_9/0Bx4BSt6jniD7UFdUMnRKaW5PSXM/whatismaterial_properties_physical6.png)
 - *材料不能穿过其他材料*
 
 #### 材料的变化
@@ -120,7 +110,6 @@ Material Design 中的对象与现实生活中的对象具有相似的性质
 	- 处于感应高度的元素当它在静止高度与动态高度偏移之间移动的时候可能会遇到其他的元素
 	- 在某一个元素水平上，元素可以在它们产生冲突之前提前移动或被移动
 - **元素高度比较**
-![](https://material-design.storage.googleapis.com/publish/material_v_9/0Bzhp5Z4wHba3VG9SaVpNbkpHb2s/whatismaterial_3d_elevation2.png)
 
 #### 阴影
 
