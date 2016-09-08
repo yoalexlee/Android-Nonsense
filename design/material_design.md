@@ -1,0 +1,171 @@
+# 深入浅出 Material Design
+
+注：*斜体* 表示有动画
+
+[官方教程](https://material.google.com/)  
+[官方教程中文版](http://wiki.jikexueyuan.com/project/material-design)（进度没有英文版快）
+
+## Material Design
+
+### 概述
+
+- 一种新的视觉设计语言
+	- 遵循优秀设计的经典原则
+	- 创新理念和新的科技思想
+	- **跨平台**
+	- 在各个设备尺寸的**统一**体验
+	- 支持触摸、语音、鼠标、键盘等**输入方式**
+
+#### 设计原则
+
+- Material is the metaphor 通过设计来表达隐喻
+	- 通过构建系统化的动效和空间合理化利用，并将两个理念合二为一，构成了实体隐喻
+	- 实体的表面和边缘提供基于真实效果的视觉体验，熟悉的触感让用户可以快速地理解和认知
+	- **光效**、表面**质感**、**运动感**对应了物体**运动规律**、**交互方式**、**空间关系**
+
+#### 鲜明、形象、深思熟虑
+
+- 在基本元素的处理上，借鉴了传统的印刷设计
+	- 排版、网格、空间、比例、配色、图像使用
+	- 视觉**层级**、视觉**意义**以及视觉**聚焦**
+	- 强调根据用户行为**凸显核心功能**，进而为用户提供操作指引
+
+#### 有意义的动画效果
+
+- 可以有效地**暗示**、**指引**用户
+- 通过动效，让物体的变化以更**连续**、更**平滑**的方式呈现给用户，让用户能够充分知晓所发生的变化
+- **动效反馈**需细腻、清爽
+- **转场动效**需高效、明晰
+
+### 环境
+
+- Material 环境是一个三维的空间，包含 **light**、**material**、**cast shadows**（投影）
+
+#### 三维世界
+
+- 每个对象都有 x、y、z 三维坐标属性
+- z 轴垂直于显示平面，并延伸向用户视角
+![](http://wiki.jikexueyuan.com/project/material-design/images/1.png)
+- Material thickness **1dp**
+- Shadows are created by the elevation difference between overlapping material
+![](https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VVFpiZ041SmhwY2c/what_is_material_environment.png)
+
+#### 光影关系
+
+- 虚拟的光线照射使场景中的对象投射出阴影
+	- 主光源投射出一个定向的阴影
+	- 环境光从各个角度投射出连贯又柔和的阴影
+- 示例
+	- 主光源
+![](http://wiki.jikexueyuan.com/project/material-design/images/1_1.png)
+	- 环境光
+![](http://wiki.jikexueyuan.com/project/material-design/images/1_2.png)
+	- 混合
+![](http://wiki.jikexueyuan.com/project/material-design/images/1_3.png)
+
+### [Material 属性](https://material.google.com/material-design/material-properties.html#)
+
+#### 物理属性
+
+- 材料具有**可变的长宽尺寸**（以 dp 为计）和**均匀的厚度（1dp）**
+![](http://wiki.jikexueyuan.com/project/material-design/images/2.png)
+- *材料会形成阴影*
+	- 阴影是由于材料元件之间的相对高度（Z 轴位置）而自然产生的
+	- 阴影描述材料元件之间的相对高度
+	- 内容并不会增加材料的厚度
+- *材料能展示任何形状和颜色*
+	- 内容的展示能够独立于材料，但要被限制在材料的范围里
+	- 输入事件不能穿过材料
+- 多个材料元件不能同时占用相同的空间点（必须有高度的区别）
+	- Do
+![](https://material-design.storage.googleapis.com/publish/material_v_9/0Bx4BSt6jniD7aVhXV0EtZ29OSU0/whatismaterial_properties_physical5.png)
+	- Don't
+![](https://material-design.storage.googleapis.com/publish/material_v_9/0Bx4BSt6jniD7UFdUMnRKaW5PSXM/whatismaterial_properties_physical6.png)
+- *材料不能穿过其他材料*
+
+#### 材料的变化
+
+- *材料能改变形状*
+- *材料仅沿着它的水平面增长和收缩*
+- *材料决不能弯曲或折叠*
+	- 以前那种比较炫酷的**翻页动画**或者**折叠动画**都不属于 Material Design
+- *几片材料能合在一起组成一片材料*
+- *当材料被割开时，它还能自己复原*
+
+#### 材料的移动
+
+- *材料能在环境中的任何地方自动产生或消失*
+- *材料能沿任何轴移动*
+- *Z 轴产生运动一般都是用户与材料交互而产生的*
+
+### [高度和阴影](http://wiki.jikexueyuan.com/project/material-design/whatis-material-design/elevation-shadows.html)
+
+Material Design 中的对象与现实生活中的对象具有相似的性质
+
+#### 高度（安卓）
+
+- *标准*
+- **静止高度**
+	- 或者称“默认高度”，它是不会变化的
+	- 当一个对象的高度产生变化时，它将会尽快恢复到自身的静止高度
+	- 组件高度
+		- 某一元素类型的静止高度在移动应用中是一个常量（比如 FAB ）
+		- 元素在某一平台中可能会存在多种静止高度，这取决于环境的深度（比如 TV）
+- **感应高度与动态高度偏移**
+	- 一些元素类型拥有感应高度，也就是说它们会根据用户的输入或系统事件来改变高度
+	- 这些高度的变化会通过动态高度偏移而不断生成
+	- 动态高度偏移是某一元素移动的目标高度
+	- 一旦输入事件完成或被取消，那么元素将会恢复到它的静止高度上
+- **避免高度冲突**
+	- 处于感应高度的元素当它在静止高度与动态高度偏移之间移动的时候可能会遇到其他的元素
+	- 在某一个元素水平上，元素可以在它们产生冲突之前提前移动或被移动
+- **元素高度比较**
+![](https://material-design.storage.googleapis.com/publish/material_v_9/0Bzhp5Z4wHba3VG9SaVpNbkpHb2s/whatismaterial_3d_elevation2.png)
+
+#### 阴影
+
+- 阴影提供了对象深度和方向性移动的重要视觉线索
+- 它们是唯一一种标示不同平面之间分离程度的视觉线索
+- *某一对象的高度决定了其具体阴影的表现形式*
+	- 如果没有一个阴影来说明高度，那么就不能明确一个方形到底是它的自身尺寸在增加还是它的高度在增加
+	- 当某一个对象的高度增加时其阴影会变得更柔和、更大，当其高度减小时，阴影会变得更卷曲
+	- 连贯的阴影帮助用户明白某一个对象看起来好像是它的高度在增加其实是它的形状在改变
+
+- **元素参考阴影**
+
+#### 对象关系
+
+- *对象层级*
+	- 所有对象都是以“父-子”关系描述的层级体系的一部分
+	- “父-子”元素说明：
+		- 每一个对象只有一个“父”元素
+		- 每一个对象可能会有任意数量的“子”元素
+		- “子”元素继承来自“父”元素的可以转移的属性，比如位置、循环、刻度和高度
+		- “兄弟”元素是指与某一对象处在同一层级的对象
+- *例外*
+	- FAB
+	- 抽屉
+	- 标题栏
+	- 对话框
+
+- 交互
+	- 某个对象与其他对象交互的方式由它们在“父-子”层次中所处位置决定
+	- “子”元素与其“父”元素在Z轴上的分离距离最近；其他对象不能插入父子元素之间
+- 高度
+	- 你会如何确定某些对象的高度（即它们在 Z 空间的位置）取决于你想描述的内容层次以及某一个对象是否需要相对于其他对象自主移动
+	
+## 即刻的 Material Design 实践
+
+### Do
+
+- 底部 Tab 选中时放大
+- 列表 item 按压时颜色渐变加深
+- 下拉刷新按钮有阴影
+- Toolbar 有阴影
+- 外链页底部 bar 有阴影
+- 开关
+
+### Don't
+
+- 订阅按钮没有阴影
+- 小报分享按钮没有阴影
